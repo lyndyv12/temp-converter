@@ -5,9 +5,9 @@
  * @param {string} fahren temperature in degrees F
  * @returns {number} the number of degrees C
  */
-let convertednum
+
 function convertToCelsius(fahren) {
-  convertednum = fahren * 9/5 + 32
+  return ((fahren * 9/5) + 32)
 };
 
 /**
@@ -27,27 +27,17 @@ function convertToCelsius(fahren) {
  */
 
 function createMessage(fahren, celc) {
-  let temptocheck;
-  
-  if (fahren != null){
-    temptocheck = fahren;
-  } else if (celc != null) {
-    temptocheck = (celc*9/5) + 32;
-  } else {
-    return 'Temperature has not been provided';
+  if (fahren < 32) {
+    return `Farentheit: ${fahren} and Celsius: ${celc} is very cold`;
   }
-    
-  if (temptocheck < 32) {
-    return 'very cold';
+  else if (fahren < 64) {
+    return `Farentheit: ${fahren} and Celsius: ${celc} is cold`;
   }
-  else if (temptocheck < 64) {
-    return 'cold';
+  else if (fahren < 86) {
+    return `Farentheit: ${fahren} and Celsius: ${celc} is warm`;
   }
-  else if (temptocheck < 86) {
-    return 'warm';
-  }
-  else if (temptocheck <100) {
-    return 'hot';
+  else if (fahren <100) {
+    return `Farentheit: ${fahren} and Celsius: ${celc} is hot`;
   }
 }
 
